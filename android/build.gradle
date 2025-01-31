@@ -22,6 +22,21 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    if (project.android.hasProperty('namespace')) { 
+        namespace 'com.example.flutter_sim_country_code'
+    }
+
+    compileSdkVersion 30
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
+
     compileSdkVersion 30
 
     defaultConfig {
